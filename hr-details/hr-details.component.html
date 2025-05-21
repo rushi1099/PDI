@@ -1,0 +1,30 @@
+<div class="content-card">
+    <div class="hr-details-container">
+        <div class="header">
+            <h2>HR Details</h2>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>HR Name</th>
+                        <th>Position</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hr of hrDetails">
+                        <td>{{hr.companyName}}</td>
+                        <td>{{hr.hrName}}</td>
+                        <td>{{hr.position}}</td>
+                        <td>{{hr.contact}}</td>
+                        <td>{{hr.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

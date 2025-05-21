@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <img src="./assets/PDI.jpg" alt="PDI Logo">
+            <span>PDI</span>
+        </div>
+        <div class="navbar-welcome">
+            Welcome back, {{userName}}!
+        </div>
+        <div class="navbar-user">
+            <span>{{userName}}</span>
+            <div class="user-avatar">
+                {{userName.charAt(0).toUpperCase()}}
+            </div>
+            <button (click)="logout()" class="logout-button">Logout</button>
+        </div>
+    </div>
+</nav> 

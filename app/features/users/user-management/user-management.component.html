@@ -1,0 +1,61 @@
+<div class="content-card">
+    <div class="header">
+        <h2>User Management</h2>
+    </div>
+
+    <div class="stats-row">
+        <div class="stat-card total-users">
+            <div class="stat-icon">
+                <i class="pi pi-users"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Total Users</h3>
+                <p class="stat-number">{{users.length}}</p>
+            </div>
+        </div>
+        <div class="stat-card active-users">
+            <div class="stat-icon">
+                <i class="pi pi-check-circle"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Active Users</h3>
+                <p class="stat-number">{{getActiveUsersCount()}}</p>
+            </div>
+        </div>
+        <div class="stat-card new-users">
+            <div class="stat-icon">
+                <i class="pi pi-star"></i>
+            </div>
+            <div class="stat-info">
+                <h3>New This Month</h3>
+                <p class="stat-number">{{getNewUsersThisMonth()}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-list">
+        <h3>User List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Signup Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.signupDate}}</td>
+                    <td>
+                        <span class="status-badge" [class.active]="user.status === 'Active'">
+                            {{user.status}}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 

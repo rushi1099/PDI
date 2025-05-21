@@ -1,0 +1,39 @@
+<app-navbar [userName]="userName"></app-navbar>
+
+<div class="dashboard-container">
+    <div class="menu-section">
+        <div class="menu-header">
+            <h2>Menu</h2>
+        </div>
+        <div class="menu-items">
+            <div class="menu-item" [class.active]="selectedMenu === 'users'" (click)="selectMenu('users')">
+                <i class="pi pi-users"></i>
+                <span>Users</span>
+            </div>
+            <div class="menu-item" [class.active]="selectedMenu === 'interviews'" (click)="selectMenu('interviews')">
+                <i class="pi pi-calendar"></i>
+                <span>Interviews</span>
+            </div>
+            <div class="menu-item" [class.active]="selectedMenu === 'reports'" (click)="selectMenu('reports')">
+                <i class="pi pi-chart-bar"></i>
+                <span>Reports</span>
+            </div>
+            <div class="menu-item" [class.active]="selectedMenu === 'hrDetails'" (click)="selectMenu('hrDetails')">
+                <i class="pi pi-users"></i>
+                <span>HR Details</span>
+            </div>
+            <div class="menu-item" [class.active]="selectedMenu === 'settings'" (click)="selectMenu('settings')">
+                <i class="pi pi-cog"></i>
+                <span>Settings</span>
+            </div>
+        </div>
+    </div>
+    <div class="content-section">
+        <!-- Users Section -->
+        <app-user-management *ngIf="selectedMenu === 'users'"></app-user-management>
+        <!-- Interview Management Section -->
+        <app-interview-management *ngIf="selectedMenu === 'interviews'"></app-interview-management>
+        <!-- HR Details Section -->
+        <app-hr-details *ngIf="selectedMenu === 'hrDetails'"></app-hr-details>
+    </div>
+</div>
